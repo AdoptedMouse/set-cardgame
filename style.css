@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html,
+body {
+    margin: 0;
+    background-color: rgb(30,30,30);
+    color: rgb(240,240,240);
+}
+
+* {
+    font-family: Montserrat, sans-serif;
+    font-weight: 200;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: rgb(50,50,50);
+    outline: none;
+    border: none;
+    color: rgb(240,240,240);
+    font-size: 20px;
+    cursor: default;
+    margin-right: 8px;
+}
+
+button:hover {
+    background-color: rgb(80,80,80);
+}
+
+.board {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-columns: auto auto auto auto;
+    padding-bottom: 60px;
+    padding-top: 30px;
+}
+
+.board .card  img{
+    width: 125px;
+    transition: .3s all;
+    cursor: pointer;
+}
+
+.board .card img:hover {
+    box-shadow: 0 2px 2px 0 rgba(179, 171, 171, 0.534), 0 3px 1px -2px rgba(163, 158, 158, 0.12), 0 1px 5px 0 rgba(172, 166, 166, 0.2);
+    transform: translateY(-2px);
+}
+
+.board .card img[data-selected="1"] {
+    border: 2px solid red;
+}
+
+.board .card img[data-hint="1"] {
+	animation: flash linear 1s 3;
+}
+
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
